@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
+import os.log
+
+class SkillsTableVC: UITableViewController {
+    
+    var player : NSManagedObject?
+    
+    override func viewDidLoad() {
+        print(player!.value(forKey: "name")!)
+    }
+    
+    
+}

@@ -14,6 +14,7 @@ import os.log
 class PlayerTableVC: UITableViewController {
     
     var players = [NSManagedObject]()
+    var selectedPlayer: NSManagedObject?
 
     override func viewWillAppear(_ animated: Bool) {
         //load data from core data
@@ -71,6 +72,7 @@ class PlayerTableVC: UITableViewController {
         
         return cell
     }
+
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -113,6 +115,15 @@ class PlayerTableVC: UITableViewController {
             }
         }
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "skillsSegue") {
+            let indexPath = tableView.indexPathForSelectedRow!.row
+            selectedPlayer = players[indexPath]
+            let vc = segue.destination as! SkillsTableVC
+            vc.player = selectedPlayer
+        }
     }
 }
 
