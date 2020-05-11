@@ -52,6 +52,7 @@ class DataSession {
                         }
 //                        print(dict)
                         let finalDict = dict as NSDictionary
+                        print(finalDict)
 
                         self.delegate?.responseDataHandler(data: finalDict)
                         

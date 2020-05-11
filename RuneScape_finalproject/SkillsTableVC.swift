@@ -41,13 +41,36 @@ class SkillsTableVC: UITableViewController {
         print(skillNames![indexPath.row])
         let level = player!.value(forKey: skillNames![indexPath.row])
         let currXP = player!.value(forKey: (skillNames![indexPath.row]+"XP"))
+        var progress2 :Float = 0.0
         
-        cell.skillName.text = skillNames![indexPath.row].uppercased()
-        cell.skillLevel.text = "\(level!)"
-        cell.currentXP.text = "\(currXP!)"
+        if ("\(currXP!)" != "-1" && indexPath.row != 0){
+            cell.skillName.text = skillNames![indexPath.row].uppercased()
+            cell.skillLevel.text = "\(level!)"
+            cell.currentXP.text = "\(currXP!)"
+            if let fltxp = currXP as? Float{
+                if (fltxp / 13034431) > 1.0{
+                    progress2 = 1.0
+                }
+                else{
+                    progress2 = fltxp / 13034431
+                }
+            }
+            cell.skillProgress.setProgress(progress2, animated: false)
+        }
+        else {
+            cell.isHidden = true
+        }
         
-
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let currXP = player!.value(forKey: (skillNames![indexPath.row]+"XP"))
+        print(String(describing: currXP!))
+        if(String(describing: currXP!) == "-1" || indexPath.row == 0){
+            return 0.0
+        }
+        return UITableView.automaticDimension
     }
     
 }
