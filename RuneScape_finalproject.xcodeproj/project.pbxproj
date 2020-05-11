@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		10415FF3245BB70E00BA8AA2 /* DataSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10415FF2245BB70E00BA8AA2 /* DataSession.swift */; };
 		10415FF5245C9B8800BA8AA2 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10415FF4245C9B8800BA8AA2 /* PlayerCell.swift */; };
+		10415FF72468C6FF00BA8AA2 /* SkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10415FF62468C6FF00BA8AA2 /* SkillCell.swift */; };
 		1B1C89C32457CC1600CC4FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C89C22457CC1600CC4FD3 /* AppDelegate.swift */; };
 		1B1C89C52457CC1600CC4FD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C89C42457CC1600CC4FD3 /* SceneDelegate.swift */; };
 		1B1C89CA2457CC1600CC4FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C89C82457CC1600CC4FD3 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		10415FF2245BB70E00BA8AA2 /* DataSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSession.swift; sourceTree = "<group>"; };
 		10415FF4245C9B8800BA8AA2 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		10415FF62468C6FF00BA8AA2 /* SkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCell.swift; sourceTree = "<group>"; };
 		1B1C89BF2457CC1600CC4FD3 /* RuneScape_finalproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuneScape_finalproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1C89C22457CC1600CC4FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B1C89C42457CC1600CC4FD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,10 +76,11 @@
 				1B1C89C42457CC1600CC4FD3 /* SceneDelegate.swift */,
 				1B1C89C82457CC1600CC4FD3 /* Main.storyboard */,
 				10415FF2245BB70E00BA8AA2 /* DataSession.swift */,
-				1B1C89D92457CECB00CC4FD3 /* PlayerTableVC.swift */,
 				1B1C89DB2457CF0000CC4FD3 /* SearchPlayerVC.swift */,
+				1B1C89D92457CECB00CC4FD3 /* PlayerTableVC.swift */,
 				1B1C89DF2457CF3100CC4FD3 /* SkillsTableVC.swift */,
 				10415FF4245C9B8800BA8AA2 /* PlayerCell.swift */,
+				10415FF62468C6FF00BA8AA2 /* SkillCell.swift */,
 				1B1C89E12457CF4600CC4FD3 /* SkillProgressVC.swift */,
 				1B1C89DD2457CF0E00CC4FD3 /* Player.swift */,
 				1B1C89CE2457CC1800CC4FD3 /* Assets.xcassets */,
@@ -165,6 +168,7 @@
 				1B1C89CD2457CC1600CC4FD3 /* RuneScape.xcdatamodeld in Sources */,
 				10415FF5245C9B8800BA8AA2 /* PlayerCell.swift in Sources */,
 				1B1C89C32457CC1600CC4FD3 /* AppDelegate.swift in Sources */,
+				10415FF72468C6FF00BA8AA2 /* SkillCell.swift in Sources */,
 				1B1C89E22457CF4600CC4FD3 /* SkillProgressVC.swift in Sources */,
 				10415FF3245BB70E00BA8AA2 /* DataSession.swift in Sources */,
 				1B1C89DE2457CF0E00CC4FD3 /* Player.swift in Sources */,
