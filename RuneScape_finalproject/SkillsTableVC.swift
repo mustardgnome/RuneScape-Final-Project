@@ -18,13 +18,12 @@ class SkillsTableVC: UITableViewController {
     var skillNames : Array<String>?
 
     override func viewDidLoad() {
-        print(player!.value(forKey: "name")!)
-//        player!.value(forKey: "")
-        skillNames = ["overall","attack","defence","strength","hitpoints","ranged","prayer","magic","cooking"
-        ,"woodcutting","fletching","fishing","firemaking","crafting","smithing","mining","herblore","agility"
+        self.tableView.backgroundColor = UIColor.brown
+        let playerName = (player!.value(forKey: "name") as? String)!
+        self.title =   "\(playerName) Stats"
+        
+        skillNames = ["overall","attack","defence","strength","hitpoints","ranged","prayer","magic","cooking","woodcutting","fletching","fishing","firemaking","crafting","smithing","mining","herblore","agility"
             ,"thieving","slayer","farming","runecrafting","hunter","construction"]
-        
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,25 +37,18 @@ class SkillsTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "skillCell", for: indexPath) as! SkillCell
 
-        print(skillNames![indexPath.row])
+  //      print(skillNames![indexPath.row])
         let level = player!.value(forKey: skillNames![indexPath.row])
         let currXP = player!.value(forKey: (skillNames![indexPath.row]+"XP"))
-        var progress2 :Float = 0.0
         
         if ("\(currXP!)" != "-1" && indexPath.row != 0){
-            cell.skillName.text = skillNames![indexPath.row].uppercased()
-            cell.skillLevel.text = "\(level!)"
-            cell.currentXP.text = "\(currXP!)"
-            if let fltxp = currXP as? Float{
-                if (fltxp / 13034431) > 1.0{
-                    progress2 = 1.0
-                }
-                else{
-                    progress2 = fltxp / 13034431
-                }
+            let curSkill = skillNames![indexPath.row]
+            cell.skillName.text = curSkill.uppercased()
+            cell.skillLevel.text = "Level: \(level!)"
+            cell.currentXP.text = "Experience: \(currXP!)"
+            cell.skillImage.image = UIImage(named: curSkill)
             }
-            cell.skillProgress.setProgress(progress2, animated: false)
-        }
+        
         else {
             cell.isHidden = true
         }
@@ -66,11 +58,20 @@ class SkillsTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let currXP = player!.value(forKey: (skillNames![indexPath.row]+"XP"))
-        print(String(describing: currXP!))
+ //       print(String(describing: currXP!))
         if(String(describing: currXP!) == "-1" || indexPath.row == 0){
             return 0.0
         }
         return UITableView.automaticDimension
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "singleSegue") {
+            let indexPath = tableView.indexPathForSelectedRow!.row
+            let vc = segue.destination as! SkillProgressVC
+            vc.player = player!
+            vc.skill = skillNames![indexPath]
+        }
     }
     
 }

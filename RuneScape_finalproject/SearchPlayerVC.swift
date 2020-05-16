@@ -87,6 +87,9 @@ class SearchPlayerVC: UIViewController,  DataProtocol {
         corePlayer.setValue(player?.strength!, forKey: "strength")
         corePlayer.setValue(player?.strengthXP!, forKey: "strengthXP")
         
+        corePlayer.setValue(player?.defence!, forKey: "defence")
+        corePlayer.setValue(player?.defenceXP!, forKey: "defenceXP")
+
         corePlayer.setValue(player?.hitpoints!, forKey: "hitpoints")
         corePlayer.setValue(player?.hitpointsXP!, forKey: "hitpointsXP")
 

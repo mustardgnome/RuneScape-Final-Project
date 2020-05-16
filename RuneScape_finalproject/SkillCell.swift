@@ -13,7 +13,6 @@ class SkillCell: UITableViewCell {
     @IBOutlet weak var skillName: UILabel!
     @IBOutlet weak var skillLevel: UILabel!
     @IBOutlet weak var currentXP: UILabel!
-    @IBOutlet weak var skillProgress: UIProgressView!
     @IBOutlet weak var skillImage: UIImageView!
 
     

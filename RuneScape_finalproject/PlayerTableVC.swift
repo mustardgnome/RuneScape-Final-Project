@@ -17,6 +17,8 @@ class PlayerTableVC: UITableViewController {
     var selectedPlayer: NSManagedObject?
 
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.tableView.backgroundColor = UIColor.brown
         //load data from core data
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
